@@ -1,0 +1,63 @@
+<!doctype html><html><head><script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script><script type="text/javascript">
+(function( global, document ){
+  function MediaDisplayController(o) {
+   this.stream = new Stream(o);
+   return this;
+  }
+  function Stream(o) {
+   this.opt = o;
+   this.element = this.init();
+   return this;
+  }
+  Stream.prototype.init = function () {
+    var t = this;
+    switch(t.opt.type){
+     case "video": 
+       e = Video(t); 
+       break;
+     case "vimeo":
+       e = Video(t);
+       break;
+     case "youtube":
+       e = Video(t);
+       break;
+     case "audio":
+       e = Audio(t);
+       break;
+     default:
+      e = null;
+    }
+    return e;
+  }
+  function Video(o) {
+    var ele, opt = o.opt;
+    if(opt.type == "video"){
+      ele = document.createElement("video");
+    } else {
+      ele = document.createElement("div");
+    }
+    return ele;
+  }
+  function Audio(o) {
+    return ele = document.createElement("audio");
+  }
+  document.addEventListener("DOMContentLoaded", function () {
+    var audio = new MediaDisplayController({
+      id: "audioContainer", 
+      src: ["http://videos.mozilla.org/serv/webmademovies/popcornplug.mp4"], 
+      type: 'audio',
+      width: 300,
+      height: 180
+    });
+    console.log(audio);
+    var video = new MediaDisplayController({
+      id: "videoContainer", 
+      src: ["http://videos.mozilla.org/serv/webmademovies/popcornplug.mp4"], 
+      type: 'video',
+      width: 300,
+      height: 180
+    });
+    console.log(video);
+  }, false);
+})(window, window.document);
+</script></head><body></body></html>
