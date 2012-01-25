@@ -1,15 +1,19 @@
 
 
 Popcorn.js + Streams
-===================== 
-Very early prototype to simplify user control over a large amount of video
-nodes. Based on irc.mozilla.org #popcorn debugging battle / learning
+=====================
+Lots and lots of video control made easy.
 
+Very early prototype to simplify user control over a large amount of video
+nodes. Based on the awesomeness that happens in irc.mozilla.org #popcorn.
+
+Inspired by [#ovc2011](http://openvideoconference.org/), [rgf](https://github.com/jjermann/rgf), [rwldrn](https://github.com/rwldrn) and
+[dseif](https://github.com/dseif).
 
 Overview
 -------------
 
-Mozilla's HTML5 Video Framework: [http://popcornjs.org](http://popcornjs.org)
+Mozilla's HTML5 Video Framework: http://popcornjs.org
 
 Popcorn.js is Mozilla's HTML5 video and media library for the open web.  It
 allows web developers, filmmakers, artists, designers and others to easily
