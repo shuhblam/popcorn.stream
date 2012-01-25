@@ -1,77 +1,90 @@
 <!doctype html><html><head><script src="http://popcornjs.org/code/dist/popcorn-complete.min.js"></script><script type="text/javascript">
 
 (function(global){
+
   "use strict";
 
-  var doc  = global.document, 
+  var doc  = global.document,
    Popcorn = global.Popcorn;
 
-  function Media(o) {
-   this.stream = new Stream(o);
+  function media(o) {
+
+   this.content = new stream(o);
    return this;
+
   }
 
-  function Stream(o) {
-   this.opt = o;
-   this.element = this.init();
+  function stream(o) {
+
+   this.arg = o;
+   this.element = this.pop();
    return this;
+
   }
 
-  Stream.prototype.init = function () {
+  stream.prototype.pop = function () {
+
     var t = this, e;
-    switch(t.opt.type){
-     case "video": 
-       e = Video(t); 
+
+    switch(t.arg.type){
+     case "video":
+       e = video(t);
        break;
      case "vimeo":
-       e = Video(t);
+       e = video(t);
        break;
      case "youtube":
-       e = Video(t);
+       e = video(t);
        break;
      case "audio":
-       e = Audio(t);
+       e = audio(t);
        break;
      default:
       e = null;
     }
+
     return e;
+
   }
 
-  function Video(o) {
-    var ele;
+  function video(o) {
+
+    var v;
     if(o.opt.type == "video"){
-      ele = document.createElement("video");
+      v = document.createElement("video");
+      v = Popcorn(v);
     } else {
-      ele = document.createElement("div");
+      v = document.createElement("div");
     }
-    return ele;
+    return v;
+
   }
 
-
-  function Audio(o) {
+  function audio(o) {
     var ele;
     return ele = document.createElement("audio");
   }
 
   doc.addEventListener("DOMContentLoaded", function () {
 
-    var audio = new Media({
-      id: "audioContainer", 
-      src: ["http://videos.mozilla.org/serv/webmademovies/popcornplug.mp4"], 
+    var audio = new media({
+      id: "audioContainer",
+      src: ["http://videos.mozilla.org/serv/webmademovies/popcornplug.mp4"],
       type: 'audio',
       width: 300,
-      height: 180
+      height: 180,
+      popcorn: 1
     });
 
     console.log(audio);
 
-    var video = new Media({
-      id: "videoContainer", 
-      src: ["http://videos.mozilla.org/serv/webmademovies/popcornplug.mp4"], 
+    var video = new media({
+      id: "videoContainer",
+      src: ["http://videos.mozilla.org/serv/webmademovies/popcornplug.mp4"],
       type: 'video',
       width: 300,
-      height: 180
+      height: 180,
+      popcorn: 0
     });
 
     console.log(video);
