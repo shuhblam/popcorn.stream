@@ -1,11 +1,11 @@
 
 
-Popcorn.js + Streams
+Popcorn.js
 =====================
 Lots and lots of video control made easy.
 
-Very early prototype to simplify user control over a large amount of video
-nodes. Based on the awesomeness that happens in irc.mozilla.org #popcorn.
+experimental prototype to simplify user control over a large amount of video
+nodes.
 
 Inspired by [#ovc2011](http://openvideoconference.org/), [rgf](https://github.com/jjermann/rgf), [rwldrn](https://github.com/rwldrn) and
 [dseif](https://github.com/dseif).

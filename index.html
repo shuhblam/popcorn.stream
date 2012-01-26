@@ -13,7 +13,7 @@
           var self = this, e;
           e = self.element = new stream(o).open();
           self.append(e);
-          self.popcorn = Popcorn('#' + o.id).play();
+          self.popcorn = Popcorn('#' + o.id);
           return self;
         }
 
@@ -98,12 +98,13 @@
             "http://video-js.zencoder.com/oceans-clip.ogv"
            ], mediaArray = [], i=0;
 
-          for(i; i < 20; i++){
+          for(i; i < 4; i++){
             var id = 'video'+i, video = new media({
-              id: id, src: urlArray, type: 'video', width: 60, height: 36
+              id: id, src: urlArray, type: 'video', width: 480, height: 288
             });
 
             mediaArray.push(video);
+
           }
 
           console.log(mediaArray);
@@ -115,6 +116,6 @@
     </script>
   </head>
   
-  <body><div id="container" style="width:100%; height:100%;"></div></body>
+  <body><div id="container" style="width:1200px; margin:auto;"></div></body>
 
 </html>
