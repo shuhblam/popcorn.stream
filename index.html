@@ -93,21 +93,22 @@
         doc.addEventListener("DOMContentLoaded", function () {
 
           var urlArray = [
-            "http://video-js.zencoder.com/oceans-clip.mp4",
-            "http://video-js.zencoder.com/oceans-clip.webm",
-            "http://video-js.zencoder.com/oceans-clip.ogv"
+            "http://video-js.zencoder.com/oceans-clip.mp4"
            ], mediaArray = [], i=0;
 
           for(i; i < 4; i++){
             var id = 'video'+i, video = new media({
               id: id, src: urlArray, type: 'video', width: 480, height: 288
-            });
+            })
 
-            mediaArray.push(video);
+            mediaArray.push(video)
 
           }
 
           console.log(mediaArray);
+          for(var j = 0; j < mediaArray.length; j++){
+            mediaArray[j].popcorn.play();
+          }
 
 
         }, false);
@@ -116,6 +117,6 @@
     </script>
   </head>
   
-  <body><div id="container" style="width:1200px; margin:auto;"></div></body>
+  <body><div id="container" style="width:1200px; margin:auto; border:1px solid black;"></div></body>
 
 </html>
